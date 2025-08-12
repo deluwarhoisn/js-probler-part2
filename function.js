@@ -9,20 +9,38 @@
 
 //---------------- function
 
-function sun(input1,input2){
-    let result = input1 + input2;
-    // console.log(result);
-    return result;
+// function sun(input1,input2){
+//     let resul = input1 + input2;
+//     // console.log(result);
+//     return resul;
+
+// }
+
+// function multiply(input1, input2){
+//     let result = input1 * input2;
+//     // console.log(result);
+//     return result;
+// }
+
+// let a = 2;
+// let b = 4;
+
+// const result = sum(a,b) + multiply (a,b);
+// console.log(result);
+
+
+
+ 
+
+
+function countVowels(str){
+let count = 0;
+for(let i=0;i<str.length;i++){
+    if(str[i]== 'a' || str[i] == 'e' || str[i]== 'i' || str[i]== 'o' || str[i]== 'u'){
+        count ++;
+    }
 }
-
-function multiply(input1, input2){
-    let result = input1 * input2;
-    // console.log(result);
-    return result;
+return count;
 }
-
-let a = 2;
-let b = 4;
-
-const result = sum (a,b) + multiply (a,b);
-console.log(result);
+let result= countVowels('data');
+console.log(result)
