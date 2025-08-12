@@ -9,24 +9,35 @@
 
 //---------------- function
 
-// function sun(input1,input2){
-//     let resul = input1 + input2;
-//     // console.log(result);
-//     return resul;
 
-// }
 
-// function multiply(input1, input2){
-//     let result = input1 * input2;
-//     // console.log(result);
-//     return result;
-// }
 
-// let a = 2;
-// let b = 4;
 
-// const result = sum(a,b) + multiply (a,b);
-// console.log(result);
+
+function sun(input1,input2){
+    let resul = input1 + input2;
+    // console.log(result);
+    return resul;
+
+}
+
+function multiply(input1, input2){
+    let result = input1 * input2;
+    // console.log(result);
+    return result;
+}
+
+let a = 2;
+let b = 4;
+
+const result = sum(a,b) + multiply (a,b);
+console.log(result);
+
+
+
+
+
+
 
 
 
@@ -47,5 +58,19 @@ for(let i=0;i<str.length;i++){
 return count;
 }
 // let result= countVowels(111);  string invalid
-let result= countVowels('data')
-console.log(result)
+let resul= countVowels('data')
+console.log(resul)
+
+
+
+
+//                810
+function cashOut(money) {
+  if (money < 0 || typeof money != "number") {
+    return "Invalid";
+  }
+  let charge = money * (1.75 / 100);
+  let fixedcharge = charge.toFixed(4); //1.7500 -> string
+  let finalCharge = parseFloat(fixedcharge); //1.75
+  return finalCharge;
+}
