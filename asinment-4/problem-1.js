@@ -130,3 +130,56 @@ console.log(isSame([1, 4, 5], [1, 4, 5])); // true
 console.log(isSame(['1', '4'], [1, 4])); // false
 console.log(isSame([2, 5, 6], 256)); // Invalid
 console.log(isSame("data", [2, 5, 6])); // Invalid
+
+//------------- problem-5
+
+
+function resultReport(marks) {
+  if (!Array.isArray(marks)) {
+    return "Invalid";
+  }
+  if (marks.length === 0) {
+    return {
+      finalScore: 0,
+      pass: 0,
+      fail: 0
+    };
+  }
+
+  let totalScore = 0;
+  let passCount = 0;
+  let failCount = 0;
+  for (let i = 0; i < marks.length; i++) {
+    const score = marks[i];
+    totalScore += score;
+    if (score >= 40) {
+      passCount++;
+    } else {
+      failCount++;
+    }
+  }
+  const averageScore = totalScore / marks.length;
+  const finalScore = Math.round(averageScore);
+  return {
+    finalScore: finalScore,
+    pass: passCount,
+    fail: failCount
+  };
+}
+
+console.log(resultReport([]));
+// Expected: { finalScore: 0, pass: 0, fail: 0 }
+// Sample Inputs
+console.log(resultReport([98, 87, 67, 91, 92, 33, 87]));
+// Expected: { finalScore: 79, pass: 6, fail: 1 }
+
+console.log(resultReport([99, 87, 67, 12, 87]));
+// Expected: { finalScore: 70, pass: 4, fail: 1 }
+
+console.log(resultReport([99]));
+// Expected: { finalScore: 99, pass: 1, fail: 0 }
+
+
+
+console.log(resultReport(100));
+// Expected: "Invalid"
