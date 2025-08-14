@@ -57,3 +57,68 @@ console.log(onlyCharacter("Ser ver :: Do wn"));
 
 console.log(onlyCharacter(["hack", "me"]));
 console.log(onlyCharacter(true)); 
+
+
+
+function  bestTeam( player1, player2 ) {
+          if(typeof player1 !== 'object' || player1 === null || typeof player2 !== 'object' || player2 === null){
+            return 'Invalid';
+          }
+          const score1 = player1.foul + player1.cardY + player1.cardR;
+          const score2 = player2.foul + player2.cardY + player2.cardR;
+          if(score1 < score2){
+            return player1.name;
+          }
+          else if(score2 < score1){
+            return player2.name;
+          }
+          else{
+            return 'Tie';
+          }
+}
+
+const brazil = {
+  name: "Brazil",
+  foul: 5,
+  cardY: 1,
+  cardR: 0
+};
+const argentina = {
+  name: "Argentina",
+  foul: 7,
+  cardY: 0,
+  cardR: 0
+};
+
+const germany_1 = {
+  name: "Germany",
+  foul: 12,
+  cardY: 0,
+  cardR: 0
+};
+const sweden = {
+  name: "Sweden",
+  foul: 8,
+  cardY: 4,
+  cardR: 0
+};
+
+const germany_2 = {
+  name: "Germany",
+  foul: 10,
+  cardY: 1,
+  cardR: 1
+};
+const france_2 = {
+  name: "France",
+  foul: 10,
+  cardY: 2,
+  cardR: 1
+};
+
+const france_invalid = "France";
+
+console.log(bestTeam(brazil, argentina));
+console.log(bestTeam(germany_1, sweden));
+console.log(bestTeam(germany_2, france_2));
+console.log(bestTeam(germany_1, france_invalid));
